@@ -14,7 +14,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     userRecords.push(userData);
     localStorage.setItem('userRecords', JSON.stringify(userRecords));
 
-    // Limpiar el formulario
+    
     document.getElementById('registrationForm').reset();
 
     alert('¡Registro exitoso!');
@@ -28,7 +28,7 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
         return;
     }
 
-    const blob = new Blob([userRecords.join('\n')], { type: 'text/plain;charset=utf-8' }); // Unir los datos correctamente
+    const blob = new Blob([userRecords.join('\n')], { type: 'text/plain;charset=utf-8' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = 'registro.txt';
